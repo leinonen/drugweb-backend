@@ -23,6 +23,8 @@ public class Drug {
 
     private String commonName;
 
+    private String effects;
+
     private String imageUrl;
 
     public Long getId() {
@@ -87,5 +89,13 @@ public class Drug {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getEffects() {
+        return effects;
+    }
+
+    public void setEffects(String effects) {
+        this.effects = effects;
     }
 }
