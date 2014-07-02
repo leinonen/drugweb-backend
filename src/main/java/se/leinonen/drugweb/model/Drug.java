@@ -1,6 +1,11 @@
 package se.leinonen.drugweb.model;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "drugs")
@@ -97,5 +102,36 @@ public class Drug {
 
     public void setEffects(String effects) {
         this.effects = effects;
+    }
+
+    // Helpers
+
+    public JsonObject toJson(){
+        JsonObject drugJson = new JsonObject();
+        //Gson gson = new Gson();
+        //String json = gson.toJson(drug);
+        drugJson.addProperty("id", this.getId());
+        drugJson.addProperty("name", this.getName());
+        drugJson.addProperty("simpleName", this.getSimpleName());
+        drugJson.addProperty("description", this.getDescription());
+        drugJson.addProperty("imageUrl", this.getImageUrl());
+        drugJson.addProperty("chemicalName", this.getChemicalName());
+        drugJson.addProperty("commonName", this.getCommonName());
+        drugJson.addProperty("effects", this.getEffects());
+        return drugJson;
+    }
+
+
+    public static List<JsonObject> drugsToJson(List<Drug> list) {
+        List<JsonObject> data = new ArrayList<JsonObject>();
+        for (Drug drug : list) {
+            data.add(drug.toJson());
+        }
+        return data;
+    }
+
+    public static Drug parseFromJson(String json) {
+        Gson gson = new Gson();
+        return gson.fromJson(json, Drug.class);
     }
 }

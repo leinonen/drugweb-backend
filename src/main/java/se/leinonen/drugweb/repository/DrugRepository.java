@@ -11,7 +11,17 @@ import java.util.List;
  */
 public class DrugRepository {
 
-    public DrugRepository() {
+    private static DrugRepository instance;
+
+
+    private DrugRepository() {
+    }
+
+    public static DrugRepository getInstance() {
+        if (instance == null){
+            instance = new DrugRepository();
+        }
+        return instance;
     }
 
     public void save(Drug drug){

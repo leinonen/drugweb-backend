@@ -43,6 +43,8 @@
     <orderEntry type="library" name="Maven: org.avaje.ebeanorm:avaje-ebeanorm-mavenenhancer:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:2.0" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.29" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.6" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:1.3.2" level="project" />
   </component>
