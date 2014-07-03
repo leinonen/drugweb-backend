@@ -1,4 +1,4 @@
-package se.leinonen.drugweb.util;
+package se.leinonen.dru.util;
 
 import org.apache.log4j.Logger;
 

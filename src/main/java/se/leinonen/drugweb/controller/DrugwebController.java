@@ -23,6 +23,7 @@ public class DrugwebController implements SparkApplication {
 
     @Override
     public void init() {
+        logger.info("Starting up!");
         EBeanConfig.getInstance().setup();
 
         // Provide some REST endpoints to access drug information.
@@ -46,14 +47,16 @@ public class DrugwebController implements SparkApplication {
 
         // OPTIONS - Seems to be required for CORS
         options(new OptionsAllowRoute(getConfig(API_DRUGS)));
-        options(new OptionsAllowRoute(getConfig(API_DRUGS_SEARCH)));
-        options(new OptionsAllowRoute(getConfig(API_DRUGS_RANDOM)));
-
         get(new GetDrugsRoute(getConfig(API_DRUGS)));
-        get(new GetSearchRoute(getConfig(API_DRUGS_SEARCH)));
-        get(new GetRandomRoute(getConfig(API_DRUGS_RANDOM)));
-        get(new GetDrugByIdRoute(getConfig(API_DRUGS_ID)));
         post(new PostDrugsRoute(getConfig(API_DRUGS)));
+
+        options(new OptionsAllowRoute(getConfig(API_DRUGS_SEARCH)));
+        get(new GetSearchRoute(getConfig(API_DRUGS_SEARCH)));
+
+        options(new OptionsAllowRoute(getConfig(API_DRUGS_RANDOM)));
+        get(new GetRandomRoute(getConfig(API_DRUGS_RANDOM)));
+
+        get(new GetDrugByIdRoute(getConfig(API_DRUGS_ID)));
     }
 
     public String getConfig(String key){
