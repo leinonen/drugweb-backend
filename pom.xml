@@ -18,6 +18,18 @@
         <finalName>drugweb-backend</finalName>
         <plugins>
             <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <!--
+                      Exclude mysql-connector because it causes problems on Tomcat ?
+                    -->
+                    <packagingExcludes>
+                        WEB-INF/lib/mysql-connector*.jar
+                    </packagingExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
