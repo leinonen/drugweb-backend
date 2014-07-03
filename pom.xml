@@ -17,18 +17,17 @@
     <build>
         <finalName>drugweb-backend</finalName>
         <plugins>
+            <!--
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <!--
-                      Exclude mysql-connector because it causes problems on Tomcat ?
-                    -->
                     <packagingExcludes>
                         WEB-INF/lib/mysql-connector*.jar
                     </packagingExcludes>
                 </configuration>
             </plugin>
+            -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
@@ -69,7 +68,7 @@
             <plugin>
                 <groupId>org.avaje.ebeanorm</groupId>
                 <artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
-                <version>3.3.2</version>
+                <version>4.1.4</version>
                 <configuration>
                     <packages>se.leinonen.drugweb.model.**</packages>
                     <transformArgs>debug=1</transformArgs>
@@ -140,13 +139,13 @@
         <dependency>
             <groupId>org.avaje.ebeanorm</groupId>
             <artifactId>avaje-ebeanorm</artifactId>
-            <version>3.3.1</version>
+            <version>4.1.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.avaje.ebeanorm</groupId>
             <artifactId>avaje-ebeanorm-mavenenhancer</artifactId>
-            <version>3.2.2</version>
+            <version>4.1.4</version>
         </dependency>
 
         <dependency>
