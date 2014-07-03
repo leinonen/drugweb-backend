@@ -2,7 +2,6 @@ package se.leinonen.drugweb;
 
 import com.google.gson.Gson;
 import se.leinonen.drugweb.util.CorsUtil;
-import se.leinonen.drugweb.util.Settings;
 import spark.Response;
 import spark.ResponseTransformerRoute;
 

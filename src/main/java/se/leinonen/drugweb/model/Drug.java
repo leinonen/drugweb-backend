@@ -3,7 +3,10 @@ package se.leinonen.drugweb.model;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
