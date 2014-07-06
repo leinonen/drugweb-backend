@@ -22,7 +22,8 @@
                 <version>2.4</version>
                 <configuration>
                     <packagingExcludes>
-                        WEB-INF/lib/javax.servlet*.jar
+                        WEB-INF/lib/javax.servlet*.jar,
+                        WEB-INF/lib/mysql-connector*.jar
                     </packagingExcludes>
                 </configuration>
             </plugin>
