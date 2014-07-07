@@ -46,6 +46,8 @@ public class DrugwebController implements SparkApplication {
         * */
 
         // OPTIONS - Seems to be required for CORS
+        options(new OptionsAllowRoute("/api"));
+
         options(new OptionsAllowRoute(getConfig(API_DRUGS)));
         get(new GetDrugsRoute(getConfig(API_DRUGS)));
         post(new PostDrugsRoute(getConfig(API_DRUGS)));
