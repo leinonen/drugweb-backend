@@ -52,7 +52,7 @@ public class DrugwebController implements SparkApplication {
         options(new OptionsAllowRoute(getConfig(API_DRUGS)));
         get(new GetDrugsRoute(getConfig(API_DRUGS)));
         post(new PostDrugsRoute(getConfig(API_DRUGS)));
-        post(new PostDrugsRoute(getConfig("/api/drugs")));
+        post(new PostDrugsRoute("/api/drugs"));
 
         options(new OptionsAllowRoute(getConfig(API_DRUGS_SEARCH)));
         get(new GetSearchRoute(getConfig(API_DRUGS_SEARCH)));
